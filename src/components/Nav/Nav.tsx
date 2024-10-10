@@ -22,11 +22,16 @@ interface Props {
   window?: () => Window;
 }
 
+interface Props {
+  window?: () => Window;
+  setCount: (count: number) => void; // Added for category management
+}
+
 const drawerWidth = 240;
-const navItems = ['Bollywood', 'Hollywood', 'All'];
+const navItems = ['Hindi','English'];
 
 export default function Nav(props: Props) {
-  const { window } = props;
+  const { window, setCount } = props; // Destructure setCategory from props
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -50,6 +55,12 @@ export default function Nav(props: Props) {
       </List>
     </Box>
   );
+
+  function addCount(){
+    const num = Math.floor(Math.random()*20) + 1
+    return num
+  }
+  addCount()
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -76,11 +87,9 @@ export default function Nav(props: Props) {
             <span className='text-[10px] absolute bottom-2'>Powered by MUI</span>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button onClick={()=> setCount(addCount())} sx={{ color: '#fff' }}>
+                Refresh
               </Button>
-            ))}
           </Box>
         </Toolbar>
       </AppBar>
