@@ -6,9 +6,6 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -28,7 +25,6 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Hindi','English'];
 
 export default function Nav(props: Props) {
   const { window, setCount } = props; // Destructure setCategory from props
@@ -45,19 +41,15 @@ export default function Nav(props: Props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <Button onClick={() => setCount(addCount())} sx={{ color: '#000' }}>
+          Refresh
+        </Button>
       </List>
     </Box>
   );
 
-  function addCount(){
-    const num = Math.floor(Math.random()*20) + 1
+  function addCount() {
+    const num = Math.floor(Math.random() * 20) + 1
     return num
   }
   addCount()
@@ -87,9 +79,9 @@ export default function Nav(props: Props) {
             <span className='text-[10px] absolute bottom-2'>Powered by MUI</span>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Button onClick={()=> setCount(addCount())} sx={{ color: '#fff' }}>
-                Refresh
-              </Button>
+            <Button onClick={() => setCount(addCount())} sx={{ color: '#fff' }}>
+              Refresh
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
@@ -112,7 +104,7 @@ export default function Nav(props: Props) {
       </nav>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        
+
       </Box>
     </Box>
   );

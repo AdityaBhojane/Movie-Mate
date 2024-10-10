@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+# Movie-Mate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie-Mate is a movie search application built with React, TypeScript, and Vite. The application allows users to search for movies, filter them by category (Hindi, English), and view details such as title, poster, year, and type.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Explore for Movies**: Explore for movies using the OMDb API.
+- **Refresh Movies**: Refresh movies by random by taping on button.
+- **Responsive Design**: The app is built with MUI for a responsive user interface.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Typed superset of JavaScript for better tooling and debugging.
+- **Vite**: Build tool that provides a faster and leaner development experience.
+- **MUI**: React components for faster and easier web development.
+- **OMDb API**: API to fetch movie data.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AdityaBhojane/Movie-Mate.git
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## ScreenShorts 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![alt text](image.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![alt text](image-1.png)
+
+![alt text](image-2.png)
